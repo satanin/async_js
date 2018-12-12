@@ -1,0 +1,29 @@
+body{
+    background-color: #FFF;
+    margin-top: 0px;
+}
+.content {
+    width: 80%;
+    margin-top: 10px;
+    padding: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #EEE;  
+}
+
+h1 {
+    color: #4e4f4e;
+    text-align: center;
+}
+
+.description {
+    line-height: 1.5rem;
+    margin: 10px;
+    padding: 20px;
+}
+
+.thumbnail{
+    float: left;
+    padding: 10px;
+    padding-right: 20px;
+}
