@@ -16,20 +16,19 @@ function getPosts() {
     }, 1000);
 }
 
-// Without callbacks
+// Using callbacks
 // We use createPost to add another Post to posts, this simulates
-// a call to a server that serves the posts and takes 2s.
-function createPost(post) {
+// a call to a server that serves the posts and takes 2s. 
+// This time we are passing a callback function that we will call
+// after our adding the post to post. 
+function createPost(post, callback) {
     setTimeout(() => {
         posts.push(post);
+        callback();
     }, 2000);
 }
 
-// We try to add another post to posts
-createPost({title: 'Post three', body: 'this is post three'});
-
-// We add all the posts to the dom but, we just see two posts 
-// because createPosts takes longer (2s, that's intented) and 
-// when we are going to add the posts to the dom the third posts
-// hasn't been added yet 
-getPosts();
+// We try to add another post to posts but this time we will pass
+// getPosts as a callback so createPost can use it after adding the
+// new post.
+createPost({title: 'Post three', body: 'this is post three'}, getPosts);
